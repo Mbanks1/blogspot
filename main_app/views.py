@@ -9,3 +9,5 @@ def home(request):
 def post_index(request):
     post = Post.objects.all()
     return render(request, 'post/index.html', {'post' : post})
+
+    

@@ -7,12 +7,11 @@
 
 {% for post in posts %}
 
-<a href="{% url 'detail' post.id %}">
     <div class="">
-      <span class="">{{ post.title }}</span>
+      <p>{{ post.title }}</p>
+      <p>{{ post.author }}</p>
     </div>
-    <a href="/post/{{ post.id }}"> 
-  </div>
+    
   
 {% endfor %} 
 
