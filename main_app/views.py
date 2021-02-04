@@ -5,5 +5,6 @@ from django.views.generic import ListView
 def home(request):
   return render(request, 'home.html')
 
-def posts_index(request):
-    return render(request, 'posts/index.html')
+def post_index(request):
+    post = Post.objects.all()
+    return render(request, 'post/index.html', {'post' : post})
