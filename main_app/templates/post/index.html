@@ -4,8 +4,11 @@
 <h1>index</h1>
 {% for post in post %}
 
+<a href="{% url 'detail' post.id %}">
  <p>Title: {{ post.title }}</p>
  <p>Author: {{ post.author }}</p>
+<a href="/post/{{ post.id }}">
+
 {% endfor %} 
 
 {% endblock %}

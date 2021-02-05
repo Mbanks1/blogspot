@@ -11,9 +11,12 @@ def post_index(request):
     post = Post.objects.all()
     return render(request, 'post/index.html', {'post' : post})
 
+def post_detail(request, post_id):
+    post = Post.objects.get(id=post_id)
+    return render(request, 'post/detail.html', {'post' : post})
 
 class PostCreate(CreateView):
     model = Post
     fields = ['title', 'content', 'author']
-    
+
 
