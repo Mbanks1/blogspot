@@ -23,5 +23,8 @@ class PostUpdate(UpdateView):
     model = Post
     fields = ['title', 'content']
 
+class PostDelete(DeleteView):
+    model = Post
+    success_url = '/post/'
 
 
