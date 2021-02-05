@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, DeleteView
 from .models import Post
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -18,5 +18,10 @@ def post_detail(request, post_id):
 class PostCreate(CreateView):
     model = Post
     fields = ['title', 'content', 'author']
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = ['title', 'content']
+
 
 
