@@ -27,4 +27,14 @@ class PostDelete(DeleteView):
     model = Post
     success_url = '/post/'
 
+class CommentCreate(CreateView):
+    model = Comment
+    field = [ 'comment' ]
 
+class CommentUpdate(UpdateView):
+    model = Comment
+    fields = [ 'comment']
+
+class CommentDelete(DeleteView):
+    model = Comment
+    fiels = [ 'comment' ]
