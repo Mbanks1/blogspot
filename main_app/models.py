@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Comment(models.Model):
     comment = models.CharField(max_length=250)
     def __str__(self):
-        return self.content
+        return self.comment
     def get_absolute_url(self):
         return reverse('detail', kwargs={'post_id': self.id}) 
 
