@@ -17,7 +17,13 @@ def post_detail(request, post_id):
 
 class PostCreate(CreateView):
     model = Post
-    fields = ['title', 'content', 'author']
+    fields = ['title', 'content']
+    
+    def form_valid(self, form):
+        # Assign the logged in user
+        form.instance.author = self.request.user
+        # Let the CreateView do its job as usual
+        return super().form_valid(form)
 
 class PostUpdate(UpdateView):
     model = Post
@@ -29,12 +35,12 @@ class PostDelete(DeleteView):
 
 class CommentCreate(CreateView):
     model = Comment
-    fields = [ 'comment' ]
+    fields = [ 'content' ]
 
 class CommentUpdate(UpdateView):
     model = Comment
-    fields = [ 'comment']
+    fields = [ 'content']
 
 class CommentDelete(DeleteView):
     model = Comment
-    fields = [ 'comment' ]
+    fields = [ 'content' ]
