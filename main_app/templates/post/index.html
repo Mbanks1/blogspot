@@ -6,8 +6,8 @@
 
 <a href="{% url 'detail' post.id %}">
  <p>Title: {{ post.title }}</p>
+ <a href="/post/{{ post.id }}">
  <p>Author: {{ post.author }}</p>
-<a href="/post/{{ post.id }}">
 
 {% endfor %} 
 
